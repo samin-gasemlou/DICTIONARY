@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #fbe5e5;
+    background-image: url("./img/flowers.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#app{
+    height: auto;
+    max-height: 400px;
+    width: 300px;
+    padding: 20px;
+    background: #f7f7f7;
+    border-radius: 30px;
+
+    .title{
+        text-align: center;
+        margin: 30px 0;
+        color: #E60965; 
+        font-size: 22px; 
+     }
+
+     #searchBox{
+        height: 40px; 
+        width: 100%; 
+        background:#f3f3fd; 
+        display:flex; 
+        flex-direction : row; 
+        border-radius :70px; 
+        overflow:hidden; 
+        border :1px solid #E60965;
+
+         input[type="text"]{
+            height :100%; 
+            width :220px; 
+            padding :0 15px; 
+            border:none; 
+            outline:none;  
+            background :transparent ;  
+            color:#E60965 ;  
+            font-size :12px;
+
+             &::placeholder{
+                color:#E60965 ;
+             }
+         }
+
+         #search{
+            height :100%;  
+            width :40px ;  
+            background:#E60965 ;  
+            display :grid ;  
+            place-items:center ;  
+            cursor:pointer ;  
+            color:#f3f3fd ;  
+            border-radius :50% ;
+
+             &:hover {
+                background: linear-gradient(#E60965,#F94892);
+             }
+         }
+     }
+
+     #data{
+        margin :10px 0 0 0 ;  
+        width :100% ;  
+        display:flex ;  
+        flex-direction:column ;  
+        max-height :230px ;  
+        overflow-y:scroll ;
+
+         #impo{
+            font-size :13px; 
+            color:#E60965 ;
+         }
+
+         #error{
+            font-size :13px;
+         }
+     }
+}
+
+$data-color: #E60965;
+$data-bg: #f3f3fd;
+$data-border: #F94892;
+
+#data #error span {
+  color: $data-color;
+}
+
+#data .detail {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  background: $data-bg;
+  border-radius: 10px;
+  border: 1px solid $data-border;
+  margin: 5px 0;
+  position: relative;
+
+   h3 {
+    color: $data-border;
+   }
+
+   p {
+    font-size:13px;
+    margin:4px 0; 
+   }
+}
+
+/*change sroller*/
+#data::-webkit-scrollbar {
+    background-color: transparent;
+    width:10px;
+
+    &-thumb{
+        height:30px; 
+        background-image:-webkit-linear-gradient($data-color, $data-border);
+        border-radius :60px; 
+     }
+}
+
